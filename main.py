@@ -166,3 +166,14 @@ mydb.mycol.drop()
 mydb.mynewcol.drop()
 print("Looking for collections:")
 pprint(mydb.collection_names())
+
+#########################
+# UPDATE
+#########################
+
+print("Updating values in collection:")
+myquery = { "name": "Luke" }
+newvalues = { "$set": { "name": "Skywalker" } }
+pprint(mycol.update_one(myquery, newvalues))
+
+
